@@ -78,7 +78,7 @@ export const deleteLogicallyPatient = async (req, res, next) => {
         status: true,
       },
       {
-        id: id,
+        where: { id: id },
       });
     await transaction.commit();
     res.status(200).json({ message: 'Patient logically deleted successfully.' });
